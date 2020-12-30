@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+</head>
+<body>
+    <form th:each="roll:${rolls}" th:action="@{/order}" th:object="${order}" th:method="get">
+        <input type="checkbox" th:field="*{rollList}" th:value="${roll.name}">
+        <label th:text="${roll.name}"></label>
+        <label th:text="${roll.price}"></label>
+        <label th:text="${roll.composition}"></label>
+        <input type="submit" value="Submit"/>
+    </form>
+</body>
+</html>
